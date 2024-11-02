@@ -1,8 +1,15 @@
 import React from 'react'
+import { Container, Navbar } from 'react-bootstrap'
 
 const Header = () => {
     return (
-        <div>Header</div>
+        <>
+            <Navbar bg='primary' variant='dark'>
+                <Container>
+
+                </Container>
+            </Navbar>
+        </>
     )
 }
 
