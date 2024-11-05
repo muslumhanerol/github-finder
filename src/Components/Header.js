@@ -13,7 +13,6 @@ const Header = () => {
                     <Nav className="ms-auto">
                         <NavLink className="nav-link" to="/">Home</NavLink>
                         <NavLink className="nav-link" to="/search">Search</NavLink>
-
                     </Nav>
                 </Container>
             </Navbar>
