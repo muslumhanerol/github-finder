@@ -1,12 +1,12 @@
 import React from 'react'
+import { Container } from 'react-bootstrap'
 
 const HomePage = () => {
     return (
         <>
-            <div>
-                <div><h1>Hoş Geldiniz.</h1></div>
-                <p>Bu uygulama ile github profillerini arayabilirsiniz.</p>
-            </div>
+            <Container fluid>
+                Merhaba
+            </Container>
         </>
     )
 }

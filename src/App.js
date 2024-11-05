@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Components/Header';
 import HomePage from './Pages/HomePage/HomePage.js';
 import SearchPage from './Pages/SearchPage/SearchPage.js';
+import Footer from './Pages/Footer/Footer.js';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
           <Route path='/search' element={<SearchPage />} />
 
         </Routes>
-
+        <Footer />
       </BrowserRouter>
     </>
   );
