@@ -5,9 +5,9 @@ const HomePage = () => {
     return (
         <>
             <Container fluid>
-                <div>
+                <div style={{ height: "86vh" }} className='d-flex justify-content-center align-items-center flex-column'>
                     <h1 className='display-4 text-primary text-center'>Welcome!</h1>
-                    <p className='display-2 text-suscess text-center'>GitHub Finder</p>
+                    <p className='display-2 text-success text-center'>GitHub Finder</p>
                 </div>
             </Container>
         </>
