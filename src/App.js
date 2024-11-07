@@ -10,6 +10,12 @@ import { useState } from 'react';
 function App() {
   //Arama sonuçlarının içinde tutulacağı state. Yeni aram ayapılıp güncellendiğinde hemen render. Başlanğıç değeri boş dizi.
   const [users, setUsers] = useState([]);
+
+  //Kullanıcıları aramak için kullanılacak fonk.
+  const searchUsers = (keyword) => {
+
+  }
+
   return (
     <>
       <AppContext.Provider>
