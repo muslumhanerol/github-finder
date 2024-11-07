@@ -6,14 +6,14 @@ import SearchPage from './Pages/SearchPage/SearchPage.js';
 import Footer from './Pages/Footer/Footer.js';
 import { AppContext } from './Contexts/AppContext.js';
 import { useState } from 'react';
+import { Axios } from 'axios';
 
 function App() {
   //Arama sonuçlarının içinde tutulacağı state. Yeni aram ayapılıp güncellendiğinde hemen render. Başlanğıç değeri boş dizi.
   const [users, setUsers] = useState([]);
 
-  //Kullanıcıları aramak için kullanılacak fonk.
   const searchUsers = (keyword) => {
-
+    Axios.get('https://api.github.com/users');
   }
 
   return (
