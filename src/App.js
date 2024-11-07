@@ -5,8 +5,11 @@ import HomePage from './Pages/HomePage/HomePage.js';
 import SearchPage from './Pages/SearchPage/SearchPage.js';
 import Footer from './Pages/Footer/Footer.js';
 import { AppContext } from './Contexts/AppContext.js';
+import { useState } from 'react';
 
 function App() {
+  //Arama sonuçlarının içinde tutulacağı state. Yeni aram ayapılıp güncellendiğinde hemen render. Başlanğıç değeri boş dizi.
+  const [users, setUsers] = useState([]);
   return (
     <>
       <AppContext.Provider>
