@@ -13,7 +13,11 @@ function App() {
   const [users, setUsers] = useState([]);
 
   const searchUsers = (keyword) => {
-    Axios.get('https://api.github.com/users');
+    Axios
+      .get('https://api.github.com/users')
+      .then((response) => {
+
+      })
   }
 
   return (
