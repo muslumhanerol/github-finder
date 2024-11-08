@@ -14,8 +14,8 @@ function App() {
 
   const searchUsers = (keyword) => {
     Axios
-      .get('https://api.github.com/users')
-      .then((response) => {
+      .get('https://api.github.com/users') //Bu adresten verileri çek.
+      .then((response) => { //Veriler çekildikten sonra buradaki kodları çalıştır.
 
       })
   }
