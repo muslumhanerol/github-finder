@@ -5,26 +5,30 @@ import HomePage from './Pages/HomePage/HomePage.js';
 import SearchPage from './Pages/SearchPage/SearchPage.js';
 import Footer from './Pages/Footer/Footer.js';
 import { AppContext } from './Contexts/AppContext.js';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 function App() {
   //Arama sonuçlarının içinde tutulacağı state. Yeni aram ayapılıp güncellendiğinde hemen render. Başlanğıç değeri boş dizi.
   const [users, setUsers] = useState([]);
-
+  //users=response.data
   const searchUsers = (keyword) => {
     Axios
       .get('https://api.github.com/users') //Bu adresten verileri çek.
       .then((response) => { //Veriler çekildikten, get isteğinden sonra buradaki kodları çalıştır. response= get işleminin sonucu.
+        setUsers(response.data);
         console.log(response.data);
       })
   }
 
-  searchUsers();
+  useEffect(() => {
+    searchUsers();
+  }, []);
 
   return (
     <>
-      <AppContext.Provider value={users}>
+      {/* mavi {} javascript kodu yazacağımızı söylüyoruz. sarı{} value yi obje olarak istiyoruz demek. */}
+      <AppContext.Provider value={{ users }}>
         <BrowserRouter>
           {/* Sayfanın heryerinden görünmesini istediğimiz componentler BrowserRouter içinde tanımlanır. */}
           <Header />
