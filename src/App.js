@@ -21,7 +21,7 @@ function App() {
       })
   }
 
-  useEffect(() => {
+  useEffect(() => { //App.js componenti sayfaya bağlandığında, ilk kez yerleştiği sırada searchUsers() çalışsın dedim.
     searchUsers();
   }, []);
 
