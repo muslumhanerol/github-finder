@@ -7,7 +7,9 @@ const Users = () => {
 
     return (
         <>
-            <div>{context.users[0].login}</div>
+            <div>
+                {context.users.map(user => <p>{user.login}</p>)}
+            </div>
 
         </>
     )
