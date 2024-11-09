@@ -10,13 +10,13 @@ import Axios from 'axios';
 
 function App() {
   //Arama sonuçlarının içinde tutulacağı state. Yeni aram ayapılıp güncellendiğinde hemen render. Başlanğıç değeri boş dizi.
-  const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([]); //users değişken setUsers usersın değerini değiştiren fonk.
   //users=response.data
   const searchUsers = (keyword) => {
     Axios
       .get('https://api.github.com/users') //Bu adresten verileri çek.
       .then((response) => { //Veriler çekildikten, get isteğinden sonra buradaki kodları çalıştır. response= get işleminin sonucu.
-        setUsers(response.data);
+        setUsers(response.data);//users=response.data
         console.log(response.data);
       })
   }
