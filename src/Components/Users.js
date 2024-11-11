@@ -5,7 +5,6 @@ import User from './User';
 
 const Users = () => {
     const context = useContext(AppContext);//App.js 27.
-    console.log(context);
 
     return (
         <>

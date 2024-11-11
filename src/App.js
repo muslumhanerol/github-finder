@@ -17,7 +17,6 @@ function App() {
       .get('https://api.github.com/users') //Bu adresten verileri çek.
       .then((response) => { //Veriler çekildikten, get isteğinden sonra buradaki kodları çalıştır. response= get işleminin sonucu.
         setUsers(response.data);//users=response.data
-        console.log(response.data);
       })
   }
 

@@ -7,6 +7,13 @@ const User = ({ user }) => { //Users.js de değişken olan user ı burada karş�
             <Col lg={2} md={3} sm={4} xs={6} className='mb-2'>
                 <Card>
                     <Card.Img src={user.avatar_url} />
+                    <Card.Body>
+                        <Card.Title>
+                            {/* Kullanıcı Adı. */}
+                            <h6 className='display-6 fs-6 fw-normal text-primary'>{user.login}</h6>
+                        </Card.Title>
+                        <a href={user.html_url} className='btn btn-primary btn-sm text-white'>Profile</a>
+                    </Card.Body>
                 </Card>
             </Col>
 
