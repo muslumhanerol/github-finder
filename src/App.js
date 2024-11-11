@@ -39,7 +39,7 @@ function App() {
             {/* Rotaların tek tek belirlendiği yer Route. path=url adresi element=açılacak sayfa. */}
             <Route path="/" element={<HomePage />} />
             <Route path='/search' element={<SearchPage />} />
-            <Route path='/userdetails' element={<UserDetailsPage />} />
+            <Route path='/getuser/:login' element={<UserDetailsPage />} />
 
           </Routes>
           <Footer />

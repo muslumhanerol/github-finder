@@ -14,7 +14,7 @@ const User = ({ user }) => { //Users.js de değişken olan user ı burada karş�
                             <h6 className='display-6 fs-6 fw-normal text-primary'>{user.login}</h6>
                         </Card.Title>
                         <a href={user.html_url} className='btn btn-primary btn-sm text-white mt-2' target='_blank'>Profile</a>
-                        <NavLink to={`/userdetails/${user.login}`} className="btn btn-link btn-sm">Details</NavLink>
+                        <NavLink to={`/getuser/${user.login}`} className="btn btn-link btn-sm">Details</NavLink>
                     </Card.Body>
                 </Card>
             </Col>
