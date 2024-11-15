@@ -21,7 +21,11 @@ function App() {
       })
   }
 
-  const getUser = ()
+  const getUser = (userName) => {
+    Axios
+      .get(`https://api.github.com/users/${userName}`)
+      .then(response => { console.log("İşlem Başarılı") })
+  }
 
   useEffect(() => { //App.js componenti sayfaya bağlandığında, ilk kez yerleştiği sırada searchUsers() çalışsın dedim.
     searchUsers();
