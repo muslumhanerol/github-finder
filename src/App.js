@@ -21,6 +21,8 @@ function App() {
       })
   }
 
+  const getUser = ()
+
   useEffect(() => { //App.js componenti sayfaya bağlandığında, ilk kez yerleştiği sırada searchUsers() çalışsın dedim.
     searchUsers();
   }, []);
@@ -51,5 +53,5 @@ function App() {
 
 export default App;
 
-//UseParams=Routerları tanımlarken url yanında ekstra değişebilecek url bilgileri vermişsek onları obje içinde almamızı sağlar ör: :login.
+//UseParams=Routerları tanımlarken url yanında ekstra değişebilecek url bilgileri vermişsek onları obje içinden çıkarıp string olarak almamızı sağlar ör: :login.
 //<Route path='/getuser/:login' element={<UserDetailsPage />} />
