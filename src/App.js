@@ -50,3 +50,6 @@ function App() {
 }
 
 export default App;
+
+//UseParams=Routerları tanımlarken url yanında ekstra değişebilecek url bilgileri vermişsek onları obje içinde almamızı sağlar ör: :login.
+//<Route path='/getuser/:login' element={<UserDetailsPage />} />
