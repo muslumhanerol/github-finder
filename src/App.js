@@ -11,8 +11,12 @@ import Axios from 'axios';
 
 function App() {
   //Arama sonuçlarının içinde tutulacağı state. Yeni aram ayapılıp güncellendiğinde hemen render. Başlanğıç değeri boş dizi.
-  const [users, setUsers] = useState([]); //users değişken setUsers usersın değerini değiştiren fonk.
-  //users=response.data
+  //users değişken setUsers usersın değerini değiştiren fonk. //users=response.data
+  const [users, setUsers] = useState([]);
+
+  const [user, setUser] = useState({});
+
+
   const searchUsers = (keyword) => {
     Axios
       .get('https://api.github.com/users') //Bu adresten verileri çek.
@@ -22,9 +26,10 @@ function App() {
   }
 
   const getUser = (userName) => {
+    //2. login burada atanacak.
     Axios
-      .get(`https://api.github.com/users/${userName}`)
-      .then(response => { });
+      .get(`https://api.github.com/users/${userName}`) //Burada userName göre aranacak.
+      .then(response => { console.log(response) });
   }
 
   useEffect(() => { //App.js componenti sayfaya bağlandığında, ilk kez yerleştiği sırada searchUsers() çalışsın dedim.
@@ -34,7 +39,7 @@ function App() {
   return (
     <>
       {/* mavi {} javascript kodu yazacağımızı söylüyoruz. sarı{} value yi obje olarak istiyoruz demek. */}
-      <AppContext.Provider value={{ users }}>
+      <AppContext.Provider value={{ users, getUser }}>
         <BrowserRouter>
           {/* Sayfanın heryerinden görünmesini istediğimiz componentler BrowserRouter içinde tanımlanır. */}
           <Header />
