@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../../Contexts/AppContext';
+import { Card, Container, Row } from 'react-bootstrap';
 
 const UserDetailsPage = () => {
     const context = useContext(AppContext);
@@ -12,7 +13,13 @@ const UserDetailsPage = () => {
     })
     return (
         <>
-            <div>{context.user.following}</div>
+            <Container>
+                <Card>
+                    <Row>
+
+                    </Row>
+                </Card>
+            </Container>
         </>
     )
 }
