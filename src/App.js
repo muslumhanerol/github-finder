@@ -10,6 +10,8 @@ import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 function App() {
+  const token = "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"
+
   //Arama sonuçlarının içinde tutulacağı state. Yeni aram ayapılıp güncellendiğinde hemen render. Başlanğıç değeri boş dizi.
   //users değişken setUsers usersın değerini değiştiren fonk. //users=response.data
   const [users, setUsers] = useState([]);
