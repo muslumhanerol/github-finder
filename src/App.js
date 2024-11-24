@@ -10,10 +10,8 @@ import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 function App() {
-  const token = "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"
-  const config = {
-    headers: { Authorization: `Bearer ${token}` }
-  }
+
+
   //Arama sonuçlarının içinde tutulacağı state. Yeni aram ayapılıp güncellendiğinde hemen render. Başlanğıç değeri boş dizi.
   //users değişken setUsers usersın değerini değiştiren fonk. //users=response.data
   const [users, setUsers] = useState([]);
@@ -35,6 +33,14 @@ function App() {
       .get(`https://api.github.com/users/${userName}`, config) //Burada userName göre aranacak.
       .then(response => { setUser(response.data) });
   }
+
+  const getRepos = (userName) => {
+    Axios
+      .get(`https://api.github.com/users/${userName}/repos`, config) //Burada userName göre aranacak.
+      .then(response => { setUser(response.data) });
+  }
+
+
 
   useEffect(() => { //App.js componenti sayfaya bağlandığında, ilk kez yerleştiği sırada searchUsers() çalışsın dedim.
     searchUsers();

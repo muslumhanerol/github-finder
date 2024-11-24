@@ -24,7 +24,9 @@ const UserDetailsPage = () => {
                                 {context.user.name} ({context.user.login})
                             </Card.Header>
                             <Card.Body>
-                                <a className='btn btn-link' href={context.user.repos_url}> User's Repos</a>
+                                <div>
+                                    <a href='/'>Repo1</a>
+                                </div>
                             </Card.Body>
                             <Card.Title>Followers</Card.Title>{context.user.followers}
                             <Card.Title>Following</Card.Title>{context.user.following}
