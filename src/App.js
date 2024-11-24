@@ -11,7 +11,10 @@ import Axios from 'axios';
 
 function App() {
 
-
+  const token = "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"
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  }
   //Arama sonuçlarının içinde tutulacağı state. Yeni aram ayapılıp güncellendiğinde hemen render. Başlanğıç değeri boş dizi.
   //users değişken setUsers usersın değerini değiştiren fonk. //users=response.data
   const [users, setUsers] = useState([]);
@@ -21,7 +24,13 @@ function App() {
   const [userRepos, setUserRepos] = useState([]); //setUserRepos u kullanarak userRepos çekilen data ile doldurulacak.
 
 
-
+  const searchUsers = (keyword) => {
+    Axios
+      .get('https://api.github.com/users', config) //Bu adresten verileri çek.
+      .then((response) => { //Veriler çekildikten, get isteğinden sonra buradaki kodları çalıştır. response= get işleminin sonucu.
+        setUsers(response.data);//users=response.data
+      })
+  }
 
   //2. login buraya atanacak.
   const getUser = (userName) => {
