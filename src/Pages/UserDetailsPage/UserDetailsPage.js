@@ -10,6 +10,7 @@ const UserDetailsPage = () => {
     useEffect(() => {
         //1.Burada login App.js 28. satıra gidecek ve logini userName atayacak.
         context.getUser(login);
+        context.getRepos(login);
     }, [])
     return (
         <>
@@ -25,7 +26,7 @@ const UserDetailsPage = () => {
                             </Card.Header>
                             <Card.Body>
                                 <div>
-                                    <a href='/'>Repo1</a>
+                                    {context.userRepo.map(userRepo => <a href={userRepo.html_url}>{userRepo.name}</a>)}
                                 </div>
                             </Card.Body>
                             <Card.Title>Followers</Card.Title>{context.user.followers}
