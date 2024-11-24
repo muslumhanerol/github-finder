@@ -11,12 +11,17 @@ import Axios from 'axios';
 
 function App() {
 
-
+  const token = "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"
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  }
   //Arama sonuçlarının içinde tutulacağı state. Yeni aram ayapılıp güncellendiğinde hemen render. Başlanğıç değeri boş dizi.
   //users değişken setUsers usersın değerini değiştiren fonk. //users=response.data
   const [users, setUsers] = useState([]);
 
   const [user, setUser] = useState({});
+
+  const [userRepos, setUserRepos] = useState([]); //setUserRepos u kullanarak userRepos çekilen data ile doldurulacak.
 
 
   const searchUsers = (keyword) => {
@@ -37,7 +42,7 @@ function App() {
   const getRepos = (userName) => {
     Axios
       .get(`https://api.github.com/users/${userName}/repos`, config) //Burada userName göre aranacak.
-      .then(response => { setUser(response.data) });
+      .then(response => { setUserRepos(response.data) });
   }
 
 
@@ -49,7 +54,7 @@ function App() {
   return (
     <>
       {/* mavi {} javascript kodu yazacağımızı söylüyoruz. sarı{} value yi obje olarak istiyoruz demek. */}
-      <AppContext.Provider value={{ users, getUser, user }}>
+      <AppContext.Provider value={{ users, getUser, user, userRepos, getRepos }}>
         <BrowserRouter>
           {/* Sayfanın heryerinden görünmesini istediğimiz componentler BrowserRouter içinde tanımlanır. */}
           <Header />
