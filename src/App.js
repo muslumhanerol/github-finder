@@ -21,13 +21,7 @@ function App() {
   const [userRepos, setUserRepos] = useState([]); //setUserRepos u kullanarak userRepos çekilen data ile doldurulacak.
 
 
-  const searchUsers = (keyword) => {
-    Axios
-      .get('https://api.github.com/users', config) //Bu adresten verileri çek.
-      .then((response) => { //Veriler çekildikten, get isteğinden sonra buradaki kodları çalıştır. response= get işleminin sonucu.
-        setUsers(response.data);//users=response.data
-      })
-  }
+
 
   //2. login buraya atanacak.
   const getUser = (userName) => {
