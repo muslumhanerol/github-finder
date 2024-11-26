@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../../Contexts/AppContext';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Card, Col, Container, ListGroup, Row } from 'react-bootstrap';
+import UserRepo from '../../Components/UserRepo';
 
 const UserDetailsPage = () => {
     const context = useContext(AppContext);
@@ -25,9 +26,11 @@ const UserDetailsPage = () => {
                                 {context.user.name} ({context.user.login})
                             </Card.Header>
                             <Card.Body>
-                                <div>
-                                    {context.userRepos.map(userRepo => <a href={userRepo.html_url}>{userRepo.name}</a>)}
-                                </div>
+                                <ListGroup>
+                                    {context.userRepos.map(userRepo => <UserRepo key={userRepo.id} userRepoName={userRepo.name} userRepoUrl={userRepo.html_url} />
+
+                                    )}
+                                </ListGroup>
                             </Card.Body>
                             <Card.Title>Followers</Card.Title>{context.user.followers}
                             <Card.Title>Following</Card.Title>{context.user.following}

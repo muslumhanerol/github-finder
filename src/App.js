@@ -10,8 +10,8 @@ import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 function App() {
-
-  const token = "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"
+  //401 hatası alırsan token değiştir, süresi bitmiştir.
+  const token = "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"
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   }
