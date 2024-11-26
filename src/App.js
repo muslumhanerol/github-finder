@@ -11,7 +11,7 @@ import Axios from 'axios';
 
 function App() {
 
-  const token = "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"
+  const token = "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"
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   }
