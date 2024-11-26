@@ -26,7 +26,7 @@ const UserDetailsPage = () => {
                             </Card.Header>
                             <Card.Body>
                                 <div>
-                                    {context.userRepo.map(userRepo => <a href={userRepo.html_url}>{userRepo.name}</a>)}
+                                    {context.userRepos.map(userRepo => <a href={userRepo.html_url}>{userRepo.name}</a>)}
                                 </div>
                             </Card.Body>
                             <Card.Title>Followers</Card.Title>{context.user.followers}
