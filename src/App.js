@@ -11,7 +11,7 @@ import Axios from 'axios';
 
 function App() {
   //401 hatası alırsan token değiştir, süresi bitmiştir.
-  const token = "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"
+  const token = "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"
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   }

@@ -15,36 +15,33 @@ const UserDetailsPage = () => {
     }, [])
     return (
         <>
-            <Container>
+            <Container className='w-75 py-4'>
                 <Card>
+                    <Row> {/* Başlık */}
+                        <Col xs={12}>
+                            <Card.Header className='display-6 text-danger'>
+                                {context.user.name} ({context.user.login})
+                            </Card.Header>
+                        </Col>
+                    </Row>
                     <Row>
                         <Col xs={4}>
-                            <Card.Img className="" src={context.user.avatar_url} />
+                            <CardBody>
+                                <Card.Img className="mb-3" src={context.user.avatar_url} />
+                                <div className='d-flex justify-content-between aling-items-center'>
+                                    <Card.Title className='fs-6'>Followers: {context.user.followers}</Card.Title>
+                                    <Card.Title className='fs-6'>Following: {context.user.following}</Card.Title>
+                                </div>
+                            </CardBody>
+
                         </Col>
                         <Col xs={8}>
-                            <Row>
-                                <Col xs={12}>
-                                    <Card.Header className='display-6 text-danger'>
-                                        {context.user.name} ({context.user.login})
-                                    </Card.Header>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col xs={9}>
-                                    <CardBody>
-                                        <Card.Title>Followers</Card.Title>{context.user.followers}
-                                        <Card.Title>Following</Card.Title>{context.user.following}
-                                    </CardBody>
-                                </Col>
-                                <Col xs={3}>
-                                    <CardBody>
-                                        <ListGroup>
-                                            {context.userRepos.map(userRepo => <UserRepo key={userRepo.id} userRepoName={userRepo.name} userRepoUrl={userRepo.html_url} />
-                                            )}
-                                        </ListGroup>
-                                    </CardBody>
-                                </Col>
-                            </Row>
+                            <CardBody>
+                                <ListGroup className='flex-row flex-wrap'>
+                                    {context.userRepos.map(userRepo => <UserRepo key={userRepo.id} userRepoName={userRepo.name} userRepoUrl={userRepo.html_url} />
+                                    )}
+                                </ListGroup>
+                            </CardBody>
                         </Col>
                     </Row>
                 </Card>
