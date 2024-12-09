@@ -8,7 +8,7 @@ const SearchForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
+        context.searchUsers(keyword); //context içinde searchUsers isimli fonk. var keywordü ora yolla.
 
     }
     return (
