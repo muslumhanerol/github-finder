@@ -19,10 +19,8 @@ function App() {
   const [userRepos, setUserRepos] = useState([]); //setUserRepos u kullanarak userRepos çekilen data ile doldurulacak.
 
 
-
-
   //401 hatası alırsan token değiştir, süresi bitmiştir.
-  const token = "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"
+  const token = "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"
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   }
@@ -31,7 +29,7 @@ function App() {
     Axios
       .get(`https://api.github.com/search/users?q=${keyword}`, config) //Bu adresten verileri çek.
       .then((response) => { //Veriler çekildikten, get isteğinden sonra buradaki kodları çalıştır. response= get işleminin sonucu.
-        setUsers(response.data);//users=response.data
+        setUsers(response.data.items);//users=response.data.items
       })
   }
 
@@ -50,9 +48,7 @@ function App() {
 
 
 
-  useEffect(() => { //App.js componenti sayfaya bağlandığında, ilk kez yerleştiği sırada searchUsers() çalışsın dedim.
-    searchUsers();
-  }, []);
+
 
   return (
     <>
@@ -82,3 +78,8 @@ export default App;
 
 //UseParams=Routerları tanımlarken url yanında ekstra değişebilecek url bilgileri vermişsek onları obje içinden çıkarıp string olarak almamızı sağlar ör: :login.
 //<Route path='/getuser/:login' element={<UserDetailsPage />} />
+
+//Silme nedeni: isme göre arama yapmaya başladım.
+// useEffect(() => { //App.js componenti sayfaya bağlandığında, ilk kez yerleştiği sırada searchUsers() çalışsın dedim, yani tüm userler api den çekilerek gösterilir.
+//   searchUsers();
+// }, []);
