@@ -10,12 +10,7 @@ import { useEffect, useState } from 'react';
 import Axios from 'axios';
 
 function App() {
-  //401 hatası alırsan token değiştir, süresi bitmiştir.
-  const token = "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"
-  const config = {
-    headers: { Authorization: `Bearer ${token}` }
-  }
-  //Arama sonuçlarının içinde tutulacağı state. Yeni aram ayapılıp güncellendiğinde hemen render. Başlanğıç değeri boş dizi.
+  //Arama sonuçlarının içinde tutulacağı state. Yeni arama yapılıp güncellendiğinde hemen render. Başlanğıç değeri boş dizi.
   //users değişken setUsers usersın değerini değiştiren fonk. //users=response.data
   const [users, setUsers] = useState([]);
 
@@ -23,6 +18,14 @@ function App() {
 
   const [userRepos, setUserRepos] = useState([]); //setUserRepos u kullanarak userRepos çekilen data ile doldurulacak.
 
+
+
+
+  //401 hatası alırsan token değiştir, süresi bitmiştir.
+  const token = "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"
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  }
 
   const searchUsers = (keyword) => {
     Axios
