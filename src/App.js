@@ -29,7 +29,7 @@ function App() {
 
   const searchUsers = (keyword) => {
     Axios
-      .get('https://api.github.com/users', config) //Bu adresten verileri çek.
+      .get(`https://api.github.com/search/users?q=${keyword}`, config) //Bu adresten verileri çek.
       .then((response) => { //Veriler çekildikten, get isteğinden sonra buradaki kodları çalıştır. response= get işleminin sonucu.
         setUsers(response.data);//users=response.data
       })
@@ -57,7 +57,7 @@ function App() {
   return (
     <>
       {/* mavi {} javascript kodu yazacağımızı söylüyoruz. sarı{} value yi obje olarak istiyoruz demek. */}
-      <AppContext.Provider value={{ users, getUser, user, userRepos, getRepos }}>
+      <AppContext.Provider value={{ users, getUser, user, userRepos, getRepos, searchUsers }}>
         <BrowserRouter>
           {/* Sayfanın heryerinden görünmesini istediğimiz componentler BrowserRouter içinde tanımlanır. */}
           <Header />
