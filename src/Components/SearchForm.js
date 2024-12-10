@@ -23,7 +23,7 @@ const SearchForm = () => {
                     </InputGroup>
 
                     <div className='d-grid mt-2'>
-                        <Button variant='danger'>
+                        <Button onClick={() => { context.setUsers([]) }} variant='danger'>
                             Clear All
                         </Button>
                     </div>

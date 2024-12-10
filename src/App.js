@@ -53,7 +53,7 @@ function App() {
   return (
     <>
       {/* mavi {} javascript kodu yazacağımızı söylüyoruz. sarı{} value yi obje olarak istiyoruz demek. */}
-      <AppContext.Provider value={{ users, getUser, user, userRepos, getRepos, searchUsers }}>
+      <AppContext.Provider value={{ users, getUser, user, userRepos, getRepos, searchUsers, setUsers }}>
         <BrowserRouter>
           {/* Sayfanın heryerinden görünmesini istediğimiz componentler BrowserRouter içinde tanımlanır. */}
           <Header />
