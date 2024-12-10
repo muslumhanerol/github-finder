@@ -20,7 +20,7 @@ function App() {
 
 
   //401 hatası alırsan token değiştir, süresi bitmiştir.
-  const token = "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"
+  const token = "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"
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   }

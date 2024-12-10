@@ -9,7 +9,6 @@ const SearchForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         context.searchUsers(keyword); //context içinde searchUsers isimli fonk. var keywordü ora yolla.
-
     }
     return (
         <>
@@ -22,6 +21,12 @@ const SearchForm = () => {
                         </Form.Control>
                         <Button variant='success' type='submit'>Search</Button>
                     </InputGroup>
+
+                    <div className='d-grid mt-2'>
+                        <Button variant='danger'>
+                            Clear All
+                        </Button>
+                    </div>
                 </Form>
             </Container>
         </>
