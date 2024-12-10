@@ -10,6 +10,12 @@ const SearchForm = () => {
         e.preventDefault();
         context.searchUsers(keyword); //context içinde searchUsers isimli fonk. var keywordü ora yolla.
     }
+
+    const handleClearAllClick = () => { //arama sonuçlarını ve arama çubuğunu semizleme fonk.
+        context.setUsers([]);
+        setKeyword("")
+    }
+
     return (
         <>
             <Container className='py-3'>
@@ -23,7 +29,8 @@ const SearchForm = () => {
                     </InputGroup>
 
                     <div className='d-grid mt-2'>
-                        <Button onClick={() => { context.setUsers([]) }} variant='danger'>
+                        {/* Arama sonrası sayfayı temizleme. */}
+                        <Button onClick={handleClearAllClick} variant='danger'>
                             Clear All
                         </Button>
                     </div>
@@ -34,3 +41,5 @@ const SearchForm = () => {
 }
 
 export default SearchForm
+
+// 27.satır setKeyword("") = arama çubuğunun içini arama sonrası boşaltma.
