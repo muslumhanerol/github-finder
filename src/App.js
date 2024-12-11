@@ -32,7 +32,7 @@ function App() {
       .get(`https://api.github.com/search/users?q=${keyword}`, config) //Bu adresten verileri çek.
       .then((response) => { //Veriler çekildikten, get isteğinden sonra buradaki kodları çalıştır. response= get işleminin sonucu.
         setUsers(response.data.items);//users=response.data.items
-        users.length == 0 ? setIsClearButtonShow(false) : setIsClearButtonShow(true); //Hepsini sil butonu dizi uzunluğu 0 old. görünmeyecek, değilse görünecek.
+        response.data.items.length == 0 ? setIsClearButtonShow(false) : setIsClearButtonShow(true); //Hepsini sil butonu dizi uzunluğu 0 old. görünmeyecek, değilse görünecek.
 
       })
   }
@@ -57,7 +57,7 @@ function App() {
   return (
     <>
       {/* mavi {} javascript kodu yazacağımızı söylüyoruz. sarı{} value yi obje olarak istiyoruz demek. */}
-      <AppContext.Provider value={{ users, getUser, user, userRepos, getRepos, searchUsers, setUsers, isClearButtonShow }}>
+      <AppContext.Provider value={{ users, getUser, user, userRepos, getRepos, searchUsers, setUsers, isClearButtonShow, setIsClearButtonShow }}>
         <BrowserRouter>
           {/* Sayfanın heryerinden görünmesini istediğimiz componentler BrowserRouter içinde tanımlanır. */}
           <Header />
