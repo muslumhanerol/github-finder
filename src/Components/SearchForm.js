@@ -14,7 +14,7 @@ const SearchForm = () => {
     const handleClearAllClick = () => { //arama sonuçlarını ve arama çubuğunu semizleme fonk.
         context.setUsers([]);
         setKeyword("")
-        context.setIsClearButtonShow(false);
+        context.setIsClearButtonShow(false); //clearall a tıklanınca sonuçlarla beraber butonda siliniyor.
     }
 
     useEffect(() => {
