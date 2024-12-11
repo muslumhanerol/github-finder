@@ -18,6 +18,8 @@ function App() {
 
   const [userRepos, setUserRepos] = useState([]); //setUserRepos u kullanarak userRepos çekilen data ile doldurulacak.
 
+  const [isClearButtonShow, setIsClearButtonShow] = useState(false);
+
 
   //401 hatası alırsan token değiştir, süresi bitmiştir.
   const token = "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"
@@ -30,6 +32,8 @@ function App() {
       .get(`https://api.github.com/search/users?q=${keyword}`, config) //Bu adresten verileri çek.
       .then((response) => { //Veriler çekildikten, get isteğinden sonra buradaki kodları çalıştır. response= get işleminin sonucu.
         setUsers(response.data.items);//users=response.data.items
+        users.length == 0 ? setIsClearButtonShow(false) : setIsClearButtonShow(true); //Hepsini sil butonu dizi uzunluğu 0 old. görünmeyecek, değilse görünecek.
+
       })
   }
 
@@ -53,7 +57,7 @@ function App() {
   return (
     <>
       {/* mavi {} javascript kodu yazacağımızı söylüyoruz. sarı{} value yi obje olarak istiyoruz demek. */}
-      <AppContext.Provider value={{ users, getUser, user, userRepos, getRepos, searchUsers, setUsers }}>
+      <AppContext.Provider value={{ users, getUser, user, userRepos, getRepos, searchUsers, setUsers, isClearButtonShow }}>
         <BrowserRouter>
           {/* Sayfanın heryerinden görünmesini istediğimiz componentler BrowserRouter içinde tanımlanır. */}
           <Header />

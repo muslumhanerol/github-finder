@@ -32,12 +32,15 @@ const SearchForm = () => {
                         <Button variant='success' type='submit'>Search</Button>
                     </InputGroup>
 
-                    <div className='d-grid mt-2'>
-                        {/* Arama sonrası sayfayı temizleme. */}
-                        <Button onClick={handleClearAllClick} variant='danger'>
-                            Clear All
-                        </Button>
-                    </div>
+                    {/* &&= true ise demek. context.isClearButtonShow true ise kodlar çalışacak.*/}
+                    {context.isClearButtonShow &&
+                        <div className='d-grid mt-2'>
+                            {/* Arama sonrası sayfayı temizleme. */}
+                            <Button onClick={handleClearAllClick} variant='danger'>
+                                Clear All
+                            </Button>
+                        </div>
+                    }
                 </Form>
             </Container>
         </>
