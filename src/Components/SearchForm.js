@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Button, Container, Form, InputGroup } from 'react-bootstrap'
 import { AppContext } from '../Contexts/AppContext';
 
@@ -15,6 +15,10 @@ const SearchForm = () => {
         context.setUsers([]);
         setKeyword("")
     }
+
+    useEffect(() => {
+        handleClearAllClick();
+    }, [])
 
     return (
         <>
