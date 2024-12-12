@@ -4,9 +4,9 @@ import { AppContext } from '../../Contexts/AppContext';
 import { Card, CardBody, Col, Container, ListGroup, Row } from 'react-bootstrap';
 import UserRepo from '../../Components/UserRepo';
 
-const UserDetailsPage = () => {
+const UserDetailsPage = ({ login }) => {
     const context = useContext(AppContext);
-    const { login } = useParams(); //useParams dışarı çıkarttığı nesnenin içindeki login i alıp değişken içine attım.
+
 
     useEffect(() => {
         //1.Burada login App.js 28. satıra gidecek ve logini userName atayacak.
