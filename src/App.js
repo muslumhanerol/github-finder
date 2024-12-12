@@ -22,7 +22,7 @@ function App() {
 
 
   //401 hatası alırsan token değiştir, süresi bitmiştir.
-  const token = "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"
+  const token = "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"
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   }
@@ -68,8 +68,6 @@ function App() {
             {/* Rotaların tek tek belirlendiği yer Route. path=url adresi element=açılacak sayfa. */}
             <Route path="/" element={<HomePage />} />
             <Route path='/search' element={<SearchPage />} />
-            <Route path='/getuser/:login' element={<UserDetailsPage />} />
-
           </Routes>
           <Footer />
         </BrowserRouter>
