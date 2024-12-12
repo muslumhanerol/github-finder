@@ -9,7 +9,7 @@ const User = ({ user }) => { //Users.js de değişken olan user ı burada karş�
 
     return (
         <>
-            <Col lg={2} md={3} sm={4} xs={6} className='mb-2'>
+            <Col className='mb-2'>
                 <Card>
                     <Card.Img src={user.avatar_url} />
                     <Card.Body>

@@ -3,7 +3,6 @@ import './App.css';
 import Header from './Components/Header';
 import HomePage from './Pages/HomePage/HomePage.js';
 import SearchPage from './Pages/SearchPage/SearchPage.js';
-import UserDetailsPage from './Pages/UserDetailsPage/UserDetailsPage.js';
 import Footer from './Pages/Footer/Footer.js';
 import { AppContext } from './Contexts/AppContext.js';
 import { useEffect, useState } from 'react';
