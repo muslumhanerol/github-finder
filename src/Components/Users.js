@@ -13,13 +13,13 @@ const Users = () => {
             <Container>
                 <Row>
                     {/* Detay yoksa 12 col varsa 8 col gösterir. */}
-                    <Col xs={context.user.login ? 6 : 12}>
+                    <Col sm={context.user.login ? 6 : 12}>
                         <Row>
                             {/*user={user} anlamı user=seçilen herhangi bir isim ve User.js te 4.satıra gönderdiğimiz isim. {user}= .map(user)   */}
                             {context.users.map(user => <User user={user} />)}
                         </Row>
                     </Col>
-                    <Col xs={context.user.login ? 6 : 0}>
+                    <Col sm={context.user.login ? 6 : 0}>
                         {context.user.login &&
                             <UserDetails login={context.user.login} />
                         }
