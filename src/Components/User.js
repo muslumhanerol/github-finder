@@ -5,11 +5,14 @@ import { AppContext } from '../Contexts/AppContext'
 
 const User = ({ user }) => { //Users.js de değişken olan user ı burada karşıladık.
     const context = useContext(AppContext);
+    const lgcol = context.user.login ? 4 : 2;
+    const mdcol = context.user.login ? 6 : 3;
+    const smcol = context.user.login ? 12 : 6;
 
 
     return (
         <>
-            <Col className='mb-2'>
+            <Col lg={lgcol} md={mdcol} sm={smcol} className='mb-2'>
                 <Card>
                     <Card.Img src={user.avatar_url} />
                     <Card.Body>

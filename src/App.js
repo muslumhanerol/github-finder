@@ -21,7 +21,7 @@ function App() {
 
 
   //401 hatası alırsan token değiştir, süresi bitmiştir.
-  const token = "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"
+  const token = "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"
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   }
