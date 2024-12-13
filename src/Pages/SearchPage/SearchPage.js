@@ -6,6 +6,7 @@ const SearchPage = () => {
     return (
         <>
             <SearchForm />
+
             <Users />
         </>
     )

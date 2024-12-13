@@ -21,7 +21,7 @@ function App() {
 
 
   //401 hatası alırsan token değiştir, süresi bitmiştir.
-  const token = "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"
+  const token = "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"
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   }
@@ -56,7 +56,7 @@ function App() {
   return (
     <>
       {/* mavi {} javascript kodu yazacağımızı söylüyoruz. sarı{} value yi obje olarak istiyoruz demek. */}
-      <AppContext.Provider value={{ users, getUser, user, userRepos, getRepos, searchUsers, setUsers, isClearButtonShow, setIsClearButtonShow }}>
+      <AppContext.Provider value={{ users, getUser, setUser, user, userRepos, getRepos, searchUsers, setUsers, isClearButtonShow, setIsClearButtonShow }}>
         <BrowserRouter>
           {/* Sayfanın heryerinden görünmesini istediğimiz componentler BrowserRouter içinde tanımlanır. */}
           <Header />

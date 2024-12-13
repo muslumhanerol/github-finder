@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../Contexts/AppContext';
-import { Card, CardBody, Col, Container, ListGroup, Row } from 'react-bootstrap';
+import { Card, CardBody, CloseButton, Col, Container, ListGroup, Row } from 'react-bootstrap';
 import UserRepo from './UserRepo';
 
 const UserDetails = ({ login }) => {
@@ -17,8 +17,11 @@ const UserDetails = ({ login }) => {
             <Card>
                 <Row> {/* Başlık */}
                     <Col xs={12}>
-                        <Card.Header className='display-6 text-danger'>
+                        {/* Kullanıcı name */}
+                        <Card.Header className='d-flex justify-content-between align-items-center display-6 text-danger'>
                             {context.user.name} ({context.user.login})
+                            <CloseButton onClick={() => { context.setUser({}) }} className='fs-6' />
+                            {/* Dizi içini boşaltan fonksiyon. */}
                         </Card.Header>
                     </Col>
                 </Row>
